@@ -17,12 +17,12 @@
 #endif
 //#define XTAL        8e6         // 8MHz
  
-#define PIN_A			(1<<PC0)
-#define PIN_B			(1<<PC1)
+#define PIN_A			(1<<PC1)
+#define PIN_B			(1<<PC0)
 #define PIN_BUTTON		(1<<PC2)
  
-#define PHASE_A			(PINC & (1<<PC0))
-#define PHASE_B			(PINC & (1<<PC1))
+#define PHASE_A			(PINC & (1<<PC1))
+#define PHASE_B			(PINC & (1<<PC0))
 #define ENCODER_BUTTON	(PINC & (1<<PC2))
 
 #define ECODER_PORT		PORTC
