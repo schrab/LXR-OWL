@@ -15,9 +15,9 @@
 #endif
  
 ////////////////////////////////////////////////////////////////////////////////
-// Pinbelegung f�r das LCD, an verwendete Pins anpassen
-// Alle LCD Pins m�ssen an einem Port angeschlossen sein und die 4
-// Datenleitungen m�ssen auf aufeinanderfolgenden Pins liegen
+// Pinbelegung fпїЅr das LCD, an verwendete Pins anpassen
+// Alle LCD Pins mпїЅssen an einem Port angeschlossen sein und die 4
+// Datenleitungen mпїЅssen auf aufeinanderfolgenden Pins liegen
  
 //  LCD DB4-DB7 <-->  PORTA Bit PDA-PA7
 #define LCD_PORT      PORTB
@@ -31,11 +31,11 @@
 //  LCD RS      <-->  PORTA Bit PA2     (RS: 1=Data, 0=Command)
 #define LCD_RS        PC4
  
-//  LCD EN      <-->  PORTA Bit PA3     (EN: 1-Impuls f�r Daten)
+//  LCD EN      <-->  PORTA Bit PA3     (EN: 1-Impuls fпїЅr Daten)
 #define LCD_EN        PC3
  
 ////////////////////////////////////////////////////////////////////////////////
-// LCD Ausf�hrungszeiten (MS=Millisekunden, US=Mikrosekunden)
+// LCD AusfпїЅhrungszeiten (MS=Millisekunden, US=Mikrosekunden)
  
 #define LCD_BOOTUP_MS           15
 #define LCD_ENABLE_US           20
@@ -52,12 +52,12 @@
  
 ////////////////////////////////////////////////////////////////////////////////
 // Zeilendefinitionen des verwendeten LCD
-// Die Eintr�ge hier sollten f�r ein LCD mit einer Zeilenl�nge von 16 Zeichen passen
-// Bei anderen Zeilenl�ngen m�ssen diese Eintr�ge angepasst werden
+// Die EintrпїЅge hier sollten fпїЅr ein LCD mit einer ZeilenlпїЅnge von 16 Zeichen passen
+// Bei anderen ZeilenlпїЅngen mпїЅssen diese EintrпїЅge angepasst werden
  
 #define LCD_DDADR_LINE1         0x00
-//#define LCD_DDADR_LINE2			0x20
-#define LCD_DDADR_LINE2         0x40
+//#define LCD_DDADR_LINE2         0x40
+#define LCD_DDADR_LINE2 	0x20
 #define LCD_DDADR_LINE3         0x10
 #define LCD_DDADR_LINE4         0x50
  
@@ -66,7 +66,7 @@
 void lcd_init( void );
  
 ////////////////////////////////////////////////////////////////////////////////
-// LCD l�schen
+// LCD lпїЅschen
 void lcd_clear( void );
  
 ////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +96,8 @@ void lcd_generatechar( uint8_t code, const uint8_t *data );
 ////////////////////////////////////////////////////////////////////////////////
 // Ausgabe eines Kommandos an das LCD.
 void lcd_command( uint8_t data );
- 
+////////////////////////////////////////////////////////////////////////////////
+void lcd_turnOn(uint8_t isOn, uint8_t cursorOn);
  
 ////////////////////////////////////////////////////////////////////////////////
 // LCD Befehle und Argumente.
@@ -161,4 +162,6 @@ void lcd_command( uint8_t data );
 // Set DD RAM Address --------- 0b1xxxxxxx  (Display Data RAM)
 #define LCD_SET_DDADR           0x80
  
+#endif 
+
 #endif 
